@@ -1,0 +1,24 @@
+[project]
+name = "3gpp-corrective-rag"
+version = "1.0.0"
+description = "Grounded 3GPP RAG backend with corrective retrieval"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "python-dotenv>=1.0",
+    "langchain-groq>=0.3",
+    "langgraph>=0.3",
+    "sentence-transformers>=3.4",
+    "faiss-cpu>=1.10",
+    "numpy>=1.26",
+    "python-docx>=1.1",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "httpx>=0.28", "ruff>=0.9"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

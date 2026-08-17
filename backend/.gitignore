@@ -1,0 +1,87 @@
+# =========================
+# Environment & Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Python tooling
+# =========================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Hugging Face / ML caches
+# =========================
+.cache/
+huggingface/
+.huggingface/
+transformers_cache/
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.bak
+
+# =========================
+# Build / Distribution
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Test / Coverage
+# =========================
+.pytest_cache/
+.coverage
+coverage.xml
+
+# =========================
+# Local runtime files
+# =========================
+*.pid
+*.db
+*.sqlite
+*.sqlite3
