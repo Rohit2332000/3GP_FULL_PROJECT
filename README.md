@@ -1,9 +1,10 @@
+# 3GPP RAG Chatbot
 
-3GPP RAG Chatbot
+A 3GPP standards-based **Retrieval-Augmented Generation (RAG)** chatbot with a FastAPI backend and modern frontend. The system is designed to provide grounded answers using 3GPP standards documentation while minimizing hallucinations.
 
-A 3GPP standards-based Retrieval-Augmented Generation (RAG) chatbot with a FastAPI backend and modern frontend. The system is designed to provide grounded answers using 3GPP standards documentation while minimizing hallucinations.
+## Project Structure
 
-Project Structure
+```text
 3GP_RAG/
 ├── backend/
 │   ├── app/
@@ -15,7 +16,13 @@ Project Structure
     ├── package.json
     ├── src/
     └── ...
-Architecture
+```
+
+---
+
+# Architecture
+
+```text
                     ┌─────────────────────┐
                     │       User          │
                     └──────────┬──────────┘
@@ -71,7 +78,11 @@ Architecture
                  │
                  ▼
               Frontend
-RAG Flow
+```
+
+### RAG Flow
+
+```text
 User Query
     ↓
 Query Embedding
@@ -89,35 +100,62 @@ LLM Generation
 Grounded Response
     ↓
 Frontend
+```
 
-1. Clone the Repository
-   git clone https://github.com/Rohit2332000/3GP_RAG_Backend.git
-   cd 3GP_RAG_Backend
-2. Start the Backend
+---
 
-Open Terminal 1.
+# 1. Clone the Repository
 
+```bash
+git clone https://github.com/Rohit2332000/3GP_RAG_Backend.git
+cd 3GP_RAG_Backend
+```
+
+---
+
+# 2. Start the Backend
+
+Open **Terminal 1**.
+
+```bash
 cd backend
+```
 
 Create a virtual environment:
 
+```bash
 python -m venv venv
-Windows
+```
+
+### Windows
+
+```powershell
 venv\Scripts\activate
-Linux/macOS
+```
+
+### Linux/macOS
+
+```bash
 source venv/bin/activate
+```
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
-Configure Environment Variables
+```
+
+## Configure Environment Variables
 
 Create:
 
+```text
 backend/.env
+```
 
 Add:
 
+```env
 GROQ_API_KEY=your_groq_api_key
 
 GENERATION_MODEL=openai/gpt-oss-120b
@@ -128,94 +166,141 @@ EVALUATION_TEMPERATURE=0
 
 FETCH_K=30
 TOP_K=5
+```
 
 Start FastAPI:
 
+```bash
 uvicorn app.main:app --reload --port 8000
+```
 
 Backend:
 
+```text
 http://localhost:8000
+```
 
 Swagger:
 
+```text
 http://localhost:8000/docs
+```
 
 Keep Terminal 1 running.
 
-3. Start the Frontend
+---
 
-Open Terminal 2.
+# 3. Start the Frontend
+
+Open **Terminal 2**.
 
 From the project root:
 
+```bash
 cd 3gpp-rag-frontend
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
 Start the frontend:
 
+```bash
 npm run dev
+```
 
 The frontend will normally be available at:
 
+```text
 http://localhost:5173
+```
 
 Open the displayed URL in your browser.
 
-Run npm install only during the initial setup or when frontend dependencies change.
+> Run `npm install` only during the initial setup or when frontend dependencies change.
 
-4. Run Order
-   Terminal 1 — Backend
-   cd backend
-   venv\Scripts\activate
-   uvicorn app.main:app --reload --port 8000
-   Terminal 2 — Frontend
-   cd 3gpp-rag-frontend
-   npm install
-   npm run dev
+---
 
-Start the backend first, then start the frontend.
+# 4. Run Order
 
-5. Key Technologies
-   Python
-   FastAPI
-   LangChain / LangGraph
-   FAISS
-   Sentence Transformers
-   CrossEncoder Reranker
-   Groq / GPT-OSS-120B
-   React / Vite
-   3GPP Standards Documentation
-   Embedding Model
-   sentence-transformers/all-MiniLM-L6-v2
-   Reranker
-   cross-encoder/ms-marco-MiniLM-L-6-v2
-6. Hallucination Reduction
+### Terminal 1 — Backend
+
+```bash
+cd backend
+venv\Scripts\activate
+uvicorn app.main:app --reload --port 8000
+```
+
+### Terminal 2 — Frontend
+
+```bash
+cd 3gpp-rag-frontend
+npm install
+npm run dev
+```
+
+**Start the backend first, then start the frontend.**
+
+---
+
+# 5. Key Technologies
+
+* **Python**
+* **FastAPI**
+* **LangChain / LangGraph**
+* **FAISS**
+* **Sentence Transformers**
+* **CrossEncoder Reranker**
+* **Groq / GPT-OSS-120B**
+* **React / Vite**
+* **3GPP Standards Documentation**
+
+### Embedding Model
+
+```text
+sentence-transformers/all-MiniLM-L6-v2
+```
+
+### Reranker
+
+```text
+cross-encoder/ms-marco-MiniLM-L-6-v2
+```
+
+---
+
+# 6. Hallucination Reduction
 
 The system focuses on grounded responses using:
 
-3GPP standards as the primary knowledge source
-Semantic vector retrieval
-CrossEncoder reranking
-Context-based generation
-Deterministic temperature (0)
-Retrieval and answer evaluation
+* 3GPP standards as the primary knowledge source
+* Semantic vector retrieval
+* CrossEncoder reranking
+* Context-based generation
+* Deterministic temperature (`0`)
+* Retrieval and answer evaluation
 
 The LLM is provided with relevant retrieved standards context instead of relying only on its pretrained knowledge.
 
-7. Important
+---
+
+# 7. Important
 
 Make sure the backend is running before using the frontend.
 
 Verify the backend through:
 
+```text
 http://localhost:8000/docs
+```
 
 If the frontend cannot connect to the backend, verify that it is configured to use:
 
+```text
 http://localhost:8000
+```
 
-Never commit .env, API keys, or other secrets to GitHub.
+**Never commit `.env`, API keys, or other secrets to GitHub.**
