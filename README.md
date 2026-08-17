@@ -200,6 +200,20 @@ From the project root:
 cd 3gpp-rag-frontend
 ```
 
+## Configure Frontend Environment Variables
+
+Create:
+
+```text
+3gpp-rag-frontend/.env
+```
+
+Add:
+
+```env
+VITE_API_URL=http://127.0.0.1:8000/api/v1
+```
+
 Install dependencies:
 
 ```bash
@@ -220,7 +234,7 @@ http://localhost:5173
 
 Open the displayed URL in your browser.
 
-> Run `npm install` only during the initial setup or when frontend dependencies change.
+> Run `npm install` only during the initial setup or whenever frontend dependencies change.
 
 ---
 
@@ -297,10 +311,10 @@ Verify the backend through:
 http://localhost:8000/docs
 ```
 
-If the frontend cannot connect to the backend, verify that it is configured to use:
+The frontend is configured to communicate with:
 
 ```text
-http://localhost:8000
+http://127.0.0.1:8000/api/v1
 ```
 
 **Never commit `.env`, API keys, or other secrets to GitHub.**
