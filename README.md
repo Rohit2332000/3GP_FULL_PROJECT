@@ -1884,7 +1884,7 @@ The screenshots below demonstrate the **working implementation of the project**,
 
 ### Chatbot Interface
 
-![1787347990583](image/README/1787347990583.jpg)
+![1787347990583](1787347990583.jpg)
 
 ### Claims and Citations
 
