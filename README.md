@@ -1888,21 +1888,21 @@ The screenshots below demonstrate the **working implementation of the project**,
 
 ### Claims and Citations
 
-![1787348039894](image/README/1787348039894.jpg)
+![1787348039894](1787348039894.jpg)
 
-![1787348494325](image/README/1787348494325.jpg)
+![1787348494325](1787348494325.jpg)
 
 **Hallucination Testing**:
 
-![1787348156788](image/README/1787348156788.jpg)
+![1787348156788](1787348156788.jpg)
 
 ### FastAPI Swagger
 
-![1787348676047](image/README/1787348676047.jpg)
+![1787348676047](1787348676047.jpg)
 
 ### System Architecture
 
-![1787349122402](image/README/1787349122402.png)
+![1787349122402](1787349122402.png)
 
 ---
 
